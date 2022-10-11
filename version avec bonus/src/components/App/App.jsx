@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import AddPerson from "components/AddPerson/AddPerson"
 import Person from "components/Person/Person"
@@ -11,9 +11,6 @@ const App = () => {
 
   const [persons, setPersons] = useState([])
   const [filterValue, setFilterValue] = useState('')
-
-  const personsRef = useRef(persons);
-  personsRef.current = persons
 
   const initialLoad = () => {
     PersonsAPI
@@ -51,19 +48,10 @@ const App = () => {
       ...payload,
       id: new Date().getTime()
     }
-    const pendingPerson = PersonsAPI.markPending(person)
-    const newPersonsWithPending = [...persons, pendingPerson]
-    setPersons(newPersonsWithPending)
     PersonsAPI
-      .create(payload)
+      .create(person)
       .then(createdPerson => {
-        // NOTICE We have to use useRef in order to access a "fresh" version of the persons, not the one accessible 
-        // when this callback was generated 
-        const newPersons = personsRef.current.map((listItem) => {
-          if (listItem.id !== pendingPerson.id) return listItem
-          return createdPerson
-        })
-        setPersons(newPersons)
+        setPersons([...persons, createdPerson])
       })
   }
 
