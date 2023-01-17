@@ -6,5 +6,3 @@ node_modules
 package-lock.json
 # ignore the development environment variables (if any)
 .env
-
-test_electron
