@@ -1,0 +1,9 @@
+@hostname = localhost
+@port = 3001
+@host = http://{{hostname}}:{{port}}
+@eventId = 61163e8dbf255a5590cfd4d9
+
+###
+
+DELETE {{host}}/api/events/{{eventId}} HTTP/1.1
+Accept: application/json

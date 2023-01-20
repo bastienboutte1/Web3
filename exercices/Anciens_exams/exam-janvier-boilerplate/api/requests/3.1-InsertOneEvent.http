@@ -1,0 +1,15 @@
+@hostname = localhost
+@port = 3001
+@host = http://{{hostname}}:{{port}}
+
+###
+
+POST {{host}}/api/events HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "date": "2022-01-20T12:10:00.000+00:00",
+  "child": "METTEZ ICI L'ID D'UN ENFANT",
+  "name": "Début de la sieste"
+}

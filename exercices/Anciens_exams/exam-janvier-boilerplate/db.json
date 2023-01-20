@@ -1,0 +1,36 @@
+{
+    "children": [
+        {
+            "name": "Victor",
+            "birthDate": "2021-02-27T15:38:33.177+00:00",
+            "gender": "M"
+        },
+        {
+            "name": "Ségolène",
+            "birthDate": "2021-03-17T10:27:15.187+00:00",
+            "gender": "F"
+        },
+        {
+            "name": "Camille",
+            "birthDate": "2021-01-02T10:17:35.457+00:00",
+            "gender": "F"
+        }
+    ],
+    "events": [
+        {
+            "date": "2022-01-20T12:10:00.000+00:00",
+            "child": "METTEZ ICI L'ID DE VICTOR",
+            "name": "Début de la sieste"
+        },
+        {
+            "date": "2022-01-20T14:10:00.000+00:00",
+            "child": "METTEZ ICI L'ID DE VICTOR",
+            "name": "Fin de la sieste"
+        },
+        {
+            "date": "2022-01-20T12:00:00.000+00:00",
+            "child": "METTEZ ICI L'ID DE VICTOR",
+            "name": "Changement de lange"
+        }
+    ]
+}
